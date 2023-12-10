@@ -21,8 +21,8 @@ The configuration file (config.json) holds crucial information for the applicati
 - **max_responses:** Maximum number of responses to a single request.
 - **files:** Paths to files for searching.
 
-**config.json:**
-```
+**config.json(sample):**
+```ruby
 {
   "config": 
     {
@@ -39,8 +39,8 @@ The configuration file (config.json) holds crucial information for the applicati
       ]
   }
 ```
-**requests.json:**
-```
+**requests.json(sample):**
+```ruby
 {
   "requests":
     [
@@ -51,8 +51,8 @@ The configuration file (config.json) holds crucial information for the applicati
       ]
   }
 ```
-**answers.json:**
-```
+**answers.json(sample):**
+```ruby
 {
   "answers":
   {
