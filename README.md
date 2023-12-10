@@ -1,20 +1,37 @@
-Project Description:
+**Project Description: Search Engine**
 
-This search engine project is designed as a console application, providing a versatile and configurable solution that can run on any server or computer. Configuration settings are managed through JSON files, allowing for easy adaptation and integration into web-based search engines.
+**Overview:**
+A console-based text data search engine tailored for local use. Configured through JSON files, this application efficiently indexes text files, processes client queries, and produces search results featuring a prioritized list of document relevance for each specific query.
 
-Key Principles:
-1. **File Configuration:** Users can specify file names in the configuration file before launching the application, determining which files the search engine will analyze.
+**ConverterJSON Class:**
+The heart of the project is the ConverterJSON class, meticulously designed to handle various JSON interactions. Its key functionalities include:
+- Reading configuration data from config.json.
+- Converting requests in JSON format.
+- Generating responses in the specified JSON format.
 
-2. **Automatic Crawling and Indexing:** The search engine autonomously crawls through specified files, indexing them to facilitate efficient and relevant document retrieval.
+**Configuration Files:**
+The configuration file (config.json) holds crucial information for the application's functionality, including the search engine's name, version, database update time, and maximum number of responses. The file also specifies the paths to files that need to be searched.
 
-3. **User Queries via JSON:** Users set search queries through a JSON file named requests.json, defining a set of words to locate relevant documents.
+**File Structure and Field Descriptions:**
+- **config:** General information, mandatory for application startup.
+- **name:** Name of the search engine, displayed during application launch.
+- **version:** Search engine version number, checked for compatibility.
+- **max_responses:** Maximum number of responses to a single request.
+- **files:** Paths to files for searching.
 
-4. **Query Transformation:** The engine transforms the user's query into a list of words for processing.
+**Requests and Answers Files:**
+The requests.json file contains queries to be processed by the search engine, while answers.json records the search results. The latter includes detailed information about the relevance and ranking of documents for each query.
 
-5. **Index-Based Search:** Utilizing the index, the engine searches for documents containing all specified words in the query.
+**InvertedIndex Class:**
+To optimize the search process, the InvertedIndex class is introduced. It efficiently stores and indexes words found in documents, ensuring a rapid and relevant search experience.
 
-6. **Ranking and Sorting:** Search results are ranked, sorted, and presented to the user. The maximum number of documents in the response is configurable through the settings.
+**SearchServer Class:**
+The SearchServer class utilizes the InvertedIndex class to process search queries. It employs a sophisticated algorithm that breaks down the query, sorts words by frequency, and ranks documents based on relevance.
 
-7. **Results Output:** The program generates an answers.json file, capturing the search results and providing an organized output for easy reference.
+**Testing System Integration:**
+The project is fortified with a robust testing system using the Google Test library. This ensures the correctness of individual modules, facilitating quick checks for code changes and eliminating potential errors.
 
-This search engine project aims to offer a flexible and user-friendly experience for information retrieval, with a focus on simplicity, configurability, and effective document ranking.
+**Final Output:**
+The culmination of this project is an intelligent search engine that seamlessly interacts with JSON files, efficiently processes user queries, and delivers highly relevant search results.
+
+Explore the project directories for detailed implementations and testing scenarios, ensuring a reliable and accurate search engine experience.
