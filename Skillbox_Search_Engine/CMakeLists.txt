@@ -40,7 +40,6 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
     set_property(TARGET Skillbox_Search_Engine PROPERTY CXX_STANDARD 20)
 endif()
 
-# TODO: Добавьте тесты и целевые объекты, если это необходимо.
 target_link_libraries(Project_library nlohmann_json::nlohmann_json)
 target_link_libraries(Skillbox_Search_Engine Project_library)
 target_include_directories(Project_library PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
