@@ -14,7 +14,7 @@ namespace version {
 
 std::vector<std::string> ConverterJSON::GetTextDocuments()
 {
-    std::ifstream config_FILE("config.json");
+    std::ifstream config_FILE("../JSON/config.json");
     if (!config_FILE.is_open()) throw ConfigFileMissing_Exception();
 
     nlohmann::json json_data;
@@ -27,8 +27,8 @@ std::vector<std::string> ConverterJSON::GetTextDocuments()
     {
         std::string parsed_version = "";
         std::string version = json_data["config"]["version"];
-        for (auto simbol : version)
-            if(simbol != '.') parsed_version += simbol;
+        for (auto symbol : version)
+            if(symbol != '.') parsed_version += symbol;
         if (parsed_version != std::to_string(version::getVersion())) throw ConfigFileVersionIncorrect_Exception();
     }
 
@@ -76,7 +76,7 @@ std::vector<std::string> ConverterJSON::GetTextDocuments()
 
 int ConverterJSON::GetResponsesLimit()
 {
-    std::ifstream config_FILE("config.json");
+    std::ifstream config_FILE("../JSON/config.json");
     nlohmann::json json_data;
     config_FILE >> json_data;
     config_FILE.close();
@@ -85,7 +85,7 @@ int ConverterJSON::GetResponsesLimit()
 
 std::vector<std::string> ConverterJSON::GetRequests()
 {
-    std::ifstream requests_FILE("requests.json");
+    std::ifstream requests_FILE("../JSON/requests.json");
     if (!requests_FILE.is_open()) throw RequestsFileMissing_Exception();
 
     nlohmann::json json_data;
@@ -117,8 +117,8 @@ void ConverterJSON::PutAnswers(std::vector<std::vector<struct RelativeIndex>> an
 
         // building requests' name
         std::string request_name = "request";
-        size_t number_lenght = std::to_string(answer_number).length();
-        for (size_t zero_counter = 0; zero_counter < (4 - number_lenght); ++zero_counter)
+        size_t number_length = std::to_string(answer_number).length();
+        for (size_t zero_counter = 0; zero_counter < (4 - number_length); ++zero_counter)
             request_name += '0';
         request_name += std::to_string(answer_number + 1);
 
@@ -136,7 +136,7 @@ void ConverterJSON::PutAnswers(std::vector<std::vector<struct RelativeIndex>> an
         }
     }
 
-    std::ofstream answers_FILE("answers.json", std::ios::trunc);
+    std::ofstream answers_FILE("../JSON/answers.json", std::ios::trunc);
     answers_FILE << json_data;
     answers_FILE.close();
 }
