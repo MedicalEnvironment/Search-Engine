@@ -5,6 +5,19 @@
 **Overview:**
 A console-based text data search engine tailored for local use. Configured through JSON files, this application efficiently indexes text files, processes client queries, and produces search results featuring a prioritized list of document relevance for each specific query.
 
+## Run the Program:
+Open a terminal and navigate to the build directory:
+```
+cd /path/to/Skillbox_Search_Engine/build
+```
+Run the program:
+```
+./Skillbox_Search_Engine
+```
+## Additional Notes
+Ensure that your C++ compiler supports C++11 or a higher standard.
+
+
 ## ConverterJSON Class:
 The heart of the project is the ConverterJSON class, meticulously designed to handle various JSON interactions. Its key functionalities include:
 - Reading configuration data from config.json.
