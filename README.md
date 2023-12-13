@@ -5,10 +5,23 @@
 **Overview:**
 A console-based text data search engine tailored for local use. Configured through JSON files, this application efficiently indexes text files, processes client queries, and produces search results featuring a prioritized list of document relevance for each specific query.
 
-## Run the Program:
-Open a terminal and navigate to the build directory:
+## Build and Run the Program:
+Right after cloning the repository open the direction of it: 
 ```
-cd /path/to/Skillbox_Search_Engine/build
+cd Skillbox_Search_Engine
+```
+Create a build directory:
+```
+mkdir build
+cd build
+```
+Run CMake to generate build files:
+```
+cmake ..
+```
+Build the project:
+```
+make
 ```
 Run the program:
 ```
